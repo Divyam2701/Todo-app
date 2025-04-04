@@ -14,17 +14,13 @@ permissions:
     owner: ubuntu
     group: ubuntu
     mode: 755
-  - object: /home/ubuntu/todo-app/scripts/*.sh
-    owner: ubuntu
-    group: ubuntu
-    mode: 755
 
 hooks:
   ApplicationStop:
     - location: scripts/stop_server.sh
       timeout: 300
       runas: ubuntu
-  BeforeInstall:
+  Install:
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: ubuntu
