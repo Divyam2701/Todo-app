@@ -3,12 +3,21 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ubuntu/todo-app  # Adjusted path as per your setup
+    destination: /home/ubuntu/todo-app
 
 permissions:
   - object: /home/ubuntu/todo-app
     owner: ubuntu
     group: ubuntu
+    mode: 755
+  - object: /home/ubuntu/todo-app/scripts
+    owner: ubuntu
+    group: ubuntu
+    mode: 755
+  - object: /home/ubuntu/todo-app/scripts/*.sh
+    owner: ubuntu
+    group: ubuntu
+    mode: 755
 
 hooks:
   ApplicationStop:
